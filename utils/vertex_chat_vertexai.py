@@ -41,7 +41,7 @@ def init_chat():
       - VERTEX_LOCATION (optional, default 'us-central1')
       - GOOGLE_APPLICATION_CREDENTIALS (path to SA key) OR use 'gcloud auth application-default login'
     """
-    project = os.getenv("GOOGLE_CLOUD_PROJECT_ID")
+    project = os.getenv("GOOGLE_CLOUD_PROJECT_ID") or os.getenv("GCP_PROJECT_ID") or os.getenv("GOOGLE_CLOUD_PROJECT") 
     location = os.getenv("VERTEX_LOCATION", "us-east1")
 
     if not project:

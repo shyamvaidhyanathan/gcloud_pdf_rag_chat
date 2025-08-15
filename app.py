@@ -47,7 +47,7 @@ st.sidebar.header("Select Model")
 provider = st.sidebar.selectbox(
     "Choose API provider",
     options=["GoogleAI", "VertexAI"],
-    index=1,
+    index=0,
     help="Switch between Google Generative AI (direct) and Vertex AI (Gemini on Vertex)."
 )
 
