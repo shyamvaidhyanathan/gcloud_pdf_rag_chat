@@ -1,0 +1,17 @@
+streamlit
+pypdf
+sentence-transformers
+langchain
+qdrant-client
+redis
+google-cloud-firestore
+tqdm
+python-dotenv
+
+
+#GoogleAI 
+google.generativeai          
+
+#VertexAI
+google-cloud-aiplatform 
+vertexai 
