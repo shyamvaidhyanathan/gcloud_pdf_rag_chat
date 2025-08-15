@@ -102,13 +102,16 @@ docker push us-east1-docker.pkg.dev/<GCP_PROJECT_ID>/rag-chat-repo/pdf-rag-gclou
 ```
 <br>
 Option 2. Submit to gcloud to the build 
+<br>
+
 ```bash 
 gcloud builds submit --tag us-east1-docker.pkg.dev/learntododeploycloudrun/rag-app-repo/rag-app:latest
 ```
 <br>
 <br>
 <br>
-
+<br>
+<br>
 ### Deploy to Cloud Run 
 
 #### Option 1. Using Beta version you can use .env file.
@@ -124,19 +127,16 @@ gcloud beta run deploy rag-chat-app   --image $IMAGE   --region us-east1   --all
 #### Set the Secrets first
 ```bash 
 echo -n "<redis_URL>" | gcloud secrets create redis-url --data-file=-
-```
-<br>
-```bash 
-
 echo -m "<QdrantAPI Key>" | gcloud secrets create qdrant-api-key --data-file=-
 ```
 <br>
-
+<br>
 ```bash 
 IMAGE="us-east1-docker.pkg.dev/learntododeploycloudrun/rag-app-repo/rag-app:latest"
 ```
 
-```bash 
+<br>
+```bash
 gcloud run deploy rag-chat-app   --image $IMAGE   --region us-east1   --allow-unauthenticated   --port 8501   --memory 2Gi   --cpu 1   --concurrency 80   --service-account <service account>   --set-env-vars GOOGLE_CLOUD_PROJECT="<GCP Project>,VERTEX_LOCATION="us-east1",VERTEX_MODEL_NAME="gemini-2.5-flash",APP_TIMEZONE="America/New_York",QDRANT_URL="<Qdrant URL>"   --set-secrets REDIS_URL=redis-url:latest --set-secrets QDRANT_API_KEY=qdrant-api-key:latest
 ```
 <br>
