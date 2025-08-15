@@ -124,7 +124,6 @@ gcloud beta run deploy rag-chat-app   --image $IMAGE   --region us-east1   --all
 
 #### Option 2. Without .env but specifying each env variable and setting secrets explicitely
 
-#### Set the Secrets first
 ```bash 
 echo -n "<redis_URL>" | gcloud secrets create redis-url --data-file=-
 echo -m "<QdrantAPI Key>" | gcloud secrets create qdrant-api-key --data-file=-
