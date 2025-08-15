@@ -1,14 +1,14 @@
 # PDF RAG Chat with Google LLMs
 
 This project is an experimental Retrieval-Augmented Generation (RAG) chat app that lets you upload a PDF and then chat interactively with its content.  
-\n\n
+<br><br>
 It has been built with :
-- **Vector Store:** Qdrant (free tier on GCP)    \n
-- **Short-term memory:** Redis  ( https://cloud.redis.io/ ) \n  
-- **Long-term memory:** Firestore (Google Cloud free tier)  \n
-- **Language model:** Choices between Gemini on Google AI, Gemini on Vertex AI and Gemma. \n 
-- **Frontend:** Streamlit  \n
-- **Deployment:** Docker image build and deployed using Google Cloud Run  \n
+- **Vector Store:** Qdrant (free tier on GCP)    <br>
+- **Short-term memory:** Redis  ( https://cloud.redis.io/ ) <br>  
+- **Long-term memory:** Firestore (Google Cloud free tier)  <br>
+- **Language model:** Choices between Gemini on Google AI, Gemini on Vertex AI and Gemma. <br> 
+- **Frontend:** Streamlit  <br>
+- **Deployment:** Docker image build and deployed using Google Cloud Run  <br>
 
 ---
 
@@ -19,9 +19,9 @@ It has been built with :
 - Backend LLM can be changed.(Multiple choices)  
 
 ---
-\n
-\n
-\n
+<br>
+<br>
+<br>
 
 ## Getting Started
 
@@ -35,9 +35,9 @@ It has been built with :
   - Redis.io (free tier)  
   - Vertex AI enabled
   - GoogleAI enabled   
-\n
-\n
-\n
+<br>
+<br>
+<br>
 
 ### Local Setup & Execution
 
@@ -82,9 +82,9 @@ streamlit run app.py
 docker build -t pdf-rag-gcloud .
 docker run --env-file .env -p 8501:8501 pdf-rag-gcloud
 ```
-\n
-\n
-\n
+<br>
+<br>
+<br>
 
 ### Build the Docker Image 
 
@@ -98,9 +98,9 @@ docker push us-east1-docker.pkg.dev/<GCP_PROJECT_ID>/rag-chat-repo/pdf-rag-gclou
 Option 2. Submit to gcloud to the build 
 gcloud builds submit --tag us-east1-docker.pkg.dev/learntododeploycloudrun/rag-app-repo/rag-app:latest
 
-\n
-\n
-\n
+<br>
+<br>
+<br>
 
 ### Deploy to Cloud Run 
 
@@ -108,9 +108,9 @@ gcloud builds submit --tag us-east1-docker.pkg.dev/learntododeploycloudrun/rag-a
 
 gcloud beta run deploy rag-chat-app   --image $IMAGE   --region us-east1   --allow-unauthenticated   --port 8501   --memory 2Gi   --cpu 1   --concurrency 80   --service-account <serviceaccount>  --env-vars-file .env
 
-\n
-\n
-\n
+<br>
+<br>
+<br>
 
 #### Option 2. Without .env but specifying each env variable and setting secrets explicitely
 
