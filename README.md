@@ -1,4 +1,4 @@
-# PDF RAG Chat with Google LLMs
+# Gated-Time RAG based Chat implementation that uses Google's LLMs. 
 
 This project is an experimental Retrieval-Augmented Generation (RAG) chat app that lets you upload a PDF and then chat interactively with its content.  
 <br><br>
